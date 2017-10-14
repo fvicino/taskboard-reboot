@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>reboot_server</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\StickyNote.cs" />
+    <Compile Remove="StateManager.cs" />
+    <Compile Remove="reboot-common\Task.cs" />
+    <Compile Remove="reboot-common\TaskView.cs" />
+    <Compile Remove="reboot-common\obj\Debug\netcoreapp2.0\reboot-common.AssemblyInfo.cs" />
+    <Compile Remove="Controllers\TaskBoardController.cs" />
+    <Compile Remove="Models\StickyNoteViewState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="WebSocket\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="reboot-common\bin\Debug\netcoreapp2.0\reboot-common.dll" />
+    <None Remove="reboot-common\bin\Debug\netcoreapp2.0\reboot-common.pdb" />
+    <None Remove="reboot-common\obj\reboot-common.csproj.nuget.cache" />
+    <None Remove="reboot-common\obj\reboot-common.csproj.nuget.g.props" />
+    <None Remove="reboot-common\obj\reboot-common.csproj.nuget.g.targets" />
+    <None Remove="reboot-common\obj\Debug\netcoreapp2.0\reboot-common.AssemblyInfoInputs.cache" />
+    <None Remove="reboot-common\obj\Debug\netcoreapp2.0\reboot-common.csproj.CoreCompileInputs.cache" />
+    <None Remove="reboot-common\obj\Debug\netcoreapp2.0\reboot-common.csproj.FileListAbsolute.txt" />
+    <None Remove="reboot-common\obj\Debug\netcoreapp2.0\reboot-common.dll" />
+    <None Remove="reboot-common\obj\Debug\netcoreapp2.0\reboot-common.pdb" />
+    <None Remove=":Users:frank:Projects:taskboard-rebooted:reboot:reboot-server:wwwroot:js:Base:namespace.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="reboot-common\bin\Debug\netcoreapp2.0\reboot-common.deps.json" />
+    <Content Remove="reboot-common\obj\project.assets.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebSocketManager\WebSocketManager.csproj" />
+  </ItemGroup>
+</Project>

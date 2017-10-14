@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "reboot";
+}
+
+@section Scripts {
+        
+    <script type="text/javascript">
+    //init up the taskboard app
+	
+  document.onmousemove = function(ev){ taskboard.eventBroker.publish('mousemove', ev); };
+
+        $(document).ready(function () {
+
+            currentTaskBoard = new TaskBoard();
+            currentTaskBoard.StateUrl = '@(Url.Action("State"))';
+            $('#btnrefresh').click(function () {
+                $('#TaskBoard').empty();
+
+                currentTaskBoard.renderTaskBoardStyle('TaskBoard', $('#viewStyle').val() || currentTaskBoard.ViewStyle);
+            });
+            $('#btnrefresh').click();
+        });
+
+        $(document).keydown(function (e) {
+            if (e.altKey && e.which == 67) {
+                if ($('#console').css('display') == 'none') {
+                    $('#console').show();
+                } else {
+                    $('#console').hide();
+                }
+            } else if (e.which == 13 || e.which == 10) {
+                currentTaskBoard.webSocketClient.onMessage({ data: $('#messageBox').val() });
+                currentTaskBoard.webSocketClient.sendMessage();
+            }
+        });
+
+
+    </script>
+}
+
+<div id="TaskBoard"></div>
+
