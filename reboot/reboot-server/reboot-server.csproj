@@ -39,6 +39,7 @@
     <None Remove="reboot-common\obj\Debug\netcoreapp2.0\reboot-common.dll" />
     <None Remove="reboot-common\obj\Debug\netcoreapp2.0\reboot-common.pdb" />
     <None Remove=":Users:frank:Projects:taskboard-rebooted:reboot:reboot-server:wwwroot:js:Base:namespace.js" />
+    <None Remove="dev.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="reboot-common\bin\Debug\netcoreapp2.0\reboot-common.deps.json" />
@@ -46,5 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebSocketManager\WebSocketManager.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dev.pfx" />
   </ItemGroup>
 </Project>

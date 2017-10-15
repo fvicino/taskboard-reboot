@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using reboot.Models;
@@ -27,8 +28,18 @@ namespace reboot
         {
             services.AddMvc();
 
-            // ## add websocket manager so it can load the SocketHandler into 
-            //    the DI container as a singleton, that how it will manage the persistent connections
+            // ## add authentication
+            // require that all request are secure
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
+
+
+            // ## AddWebsocketManager registers the SocketHandler class into 
+            //    the DI container. When WebSocketMiddleware is Mapped below
+            //    using MapWebSocketManager it will be injected with a SocketHandler singlton
+            //    that's how it will manage the persistent connections
             services.AddWebSocketManager();
 
         }
@@ -38,9 +49,8 @@ namespace reboot
         //    fish around in the DI container
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
-            // ## Use the dev exception for now    
+            // ## Use the dev exception in all configs for now    
             app.UseDeveloperExceptionPage();
-
 
             //## standard web stuff
             app.UseStaticFiles();
