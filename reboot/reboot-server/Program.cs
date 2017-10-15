@@ -19,7 +19,8 @@ namespace reboot
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
+                   .UseKestrel()
+                   .UseStartup<Startup>()
+                   .Build();
     }
 }
