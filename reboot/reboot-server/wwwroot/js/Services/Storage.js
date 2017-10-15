@@ -8,10 +8,12 @@ taskboard.storage = new function storage () {
         window.localStorage.setItem(key, tb);
     }
     this.get = function (key) {
+    /* disable loading from local storage for now
         var tb = window.localStorage.getItem(key);
         if (tb) {
             return JSON.parse(tb);
         }
+     */
         return null;
     }
 } ();

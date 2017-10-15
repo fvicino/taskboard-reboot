@@ -1,33 +1,4 @@
-﻿/*******Sticky Note********/
-
-/*.stickynote:after {
-    -moz-transform: rotate(3deg);
-    background-color: rgba(0, 0, 0, 0.5);
-    bottom: 3px;
-    box-shadow: 0 0 10px #000000;
-    content: "";
-    display: block;
-    height: 20%;
-    opacity: 1;
-    position: absolute;
-    right: 10px;
-    width: 90%;
-    z-index: -1;
-}
-.stickynote:before {
-    -moz-transform: rotate(-3deg);
-    background-color: rgba(0, 0, 0, 0.5);
-    bottom: 3px;
-    box-shadow: 0 0 10px #000000;
-    content: "";
-    display: block;
-    height: 20%;
-    left: 10px;
-    opacity: 1;
-    position: absolute;
-    width: 90%;
-    z-index: -1;
-}*/
+/*******Sticky Note********/
 
 
 @-moz-keyframes shakey {

@@ -21,11 +21,13 @@
     <Compile Remove="reboot-common\obj\Debug\netcoreapp2.0\reboot-common.AssemblyInfo.cs" />
     <Compile Remove="Controllers\TaskBoardController.cs" />
     <Compile Remove="Models\StickyNoteViewState.cs" />
+    <Compile Remove="Models\TaskView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="WebSocket\" />
+    <Folder Include="Data\Abstraction\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="reboot-common\bin\Debug\netcoreapp2.0\reboot-common.dll" />

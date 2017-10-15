@@ -8,13 +8,13 @@
 function baseRenderer() {
     var Me = this;
     this.title = 'base';
-    this.CEILING = 50;
-    this.NOTEWIDTH = 125;
-    this.PROJECTGAP = 30;
-    this.MAXSCREENHIEGHT = 700;
-    this.RANDOMMIN = 5;
-    this.RANDOMMAX = 20;
-    this.HEADERHEIGHT = 30;
+    this.CEILING = 60;
+    this.NOTEWIDTH = 130;
+    this.PROJECTGAP = 100;
+    this.MAXSCREENHIEGHT = 600;
+    this.RANDOMMIN = 10;
+    this.RANDOMMAX = 30;
+    this.HEADERHEIGHT = 40;
     this.TRANSFORMLEFT = "transformed-left";
     this.TRANSFORMRIGHT = "transformed-right";
 

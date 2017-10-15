@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
+<Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk" DefaultTargets="Build">
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.0</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
+    <DockerLaunchBrowser>true</DockerLaunchBrowser>
+    <DockerServiceUrl>http://localhost</DockerServiceUrl>
+    <DockerServiceName>reboot-server</DockerServiceName>
+    <ProjectGuid>{D9759D4D-1412-4D86-B70C-C99BD4E64696}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.ci.build.yml" />

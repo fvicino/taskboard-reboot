@@ -11,25 +11,25 @@ function byProjectRenderer() {
     this.render = function (rootElement, modelData) {
 
         var project = "", Title = currentTaskBoard.TITLE;
-        var y = currentTaskBoard.CEILING, x = 5;
+        var y = currentTaskBoard.CEILING, x = 20;
 
         currentTaskBoard.IgnoreViewState = false;
-        modelData.sort(this.sortFunction('AssignedToDisplay'));
-        modelData.sort(this.sortFunction('Project'));
+        modelData.sort(this.sortFunction('assignedToDisplay'));
+        modelData.sort(this.sortFunction('project'));
 
         $.each(modelData, function (index, i) {
             var noteState = {};
-            if (i.Project != project) {
+            if (i.project != project) {
 
                 if (project != "") {
                     x = x + Me.NOTEWIDTH + Me.rand(Me.RANDOMMIN, Me.RANDOMMAX) + Me.PROJECTGAP;
                     y = Me.CEILING;
                 }
 
-                $('#' + rootElement).append('<div class="project-header" style="top: ' + y + 'px; left: ' + x + 'px; height:' + currentTaskBoard.HEADERHEIGHT + '" >' + i.Project + '</div>');
+                $('#' + rootElement).append('<div class="project-header" style="top: ' + y + 'px; left: ' + x + 'px; height:' + currentTaskBoard.HEADERHEIGHT + '" >' + i.project + '</div>');
 
                 y = Me.CEILING + Me.HEADERHEIGHT + Me.rand(Me.RANDOMMIN, Me.RANDOMMAX);
-                project = i.Project;
+                project = i.project;
 
             }
             else {
@@ -42,6 +42,7 @@ function byProjectRenderer() {
                 }
             }
 
+            currentTaskBoard.IgnoreViewState=true;
             if (currentTaskBoard.IgnoreViewState) {
 
                 var tr = Me.rand(Me.RANDOMMIN, Me.RANDOMMAX);

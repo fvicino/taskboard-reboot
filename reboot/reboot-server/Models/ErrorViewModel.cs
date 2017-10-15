@@ -1,6 +1,6 @@
 using System;
 
-namespace reboot.Models
+namespace reboot_server.Models
 {
     public class ErrorViewModel
     {

@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using reboot_server.Models;
 
 namespace reboot_server.Data
 {
@@ -10,7 +11,7 @@ namespace reboot_server.Data
         {
         }
 
-        public DbSet<Task> Tasks { get; set; }
+        public DbSet<TaskNote> Tasks { get; set; }
 
     }
 }
