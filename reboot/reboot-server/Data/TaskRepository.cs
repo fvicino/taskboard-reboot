@@ -6,8 +6,9 @@ using reboot_server.Models;
 
 namespace reboot_server.Data
 {
-    // ## this class handles the data storage implementtion but the 
-    //    controller/handle will depend on the interface so it can be replaced later on
+    // ## this class handles the data storage implementtion. 
+    //    The controller depends on the repo interface so 
+    //     the implementation can be replaced 
     public class TaskRepository : IRepository<TaskNote>
     {
         // ## context should be injected by the DI container

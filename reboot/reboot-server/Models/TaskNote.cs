@@ -8,8 +8,6 @@ namespace reboot_server.Models
     {
         [Key]
         public int ID { get; set; }
-
-        //        public string Transform { get; set; }
         public string Title { get; set; }
         public string OriginalEstimate { get; set; }
         public string AssignedToDisplay { get; set; }

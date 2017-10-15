@@ -7,9 +7,7 @@ namespace reboot_server.Data
     public class TaskContext : DbContext
     {
         public TaskContext(DbContextOptions<TaskContext> options)
-            : base(options)
-        {
-        }
+            : base(options) {}
 
         public DbSet<TaskNote> Tasks { get; set; }
 

@@ -20,7 +20,6 @@ namespace reboot_server
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
         }
 
         public IConfiguration Configuration { get; }
@@ -35,17 +34,12 @@ namespace reboot_server
             //## add our repositories here - there is only one right now!
             services.AddScoped(typeof(IRepository<TaskNote>), typeof(TaskRepository));
 
-
-
             //services.AddMvc().AddControllersAsServices(); // ## interesting but not too useful withou interception
             services.AddMvc();
 
             // ## add websocket manager so it can load the SocketHandler into 
             //    the DI container as a singleton, that how it will manage the persistent connections
             services.AddWebSocketManager();
-
-
-
 
         }
 
@@ -56,7 +50,6 @@ namespace reboot_server
         {
             // ## Use the dev exception for now    
             app.UseDeveloperExceptionPage();
-
 
             //## standard web stuff
             app.UseStaticFiles();
