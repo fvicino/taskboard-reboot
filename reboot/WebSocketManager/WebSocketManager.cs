@@ -29,7 +29,7 @@ namespace WebSocketManager
             if (context.WebSockets.IsWebSocketRequest) 
             { 
 
-                // ##  this is where the http request wil get upgraded
+
                 var connection = await _webSocketHandler.OnConnected(context); 
                 if (connection != null) 
                 { 

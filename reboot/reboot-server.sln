@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSocketManager", "WebSock
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D9759D4D-1412-4D86-B70C-C99BD4E64696}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reboot-sockets", "reboot-sockets\reboot-sockets.csproj", "{ABA8A089-A6BA-4139-AE8E-44CF6A9FD682}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +27,9 @@ Global
 		{D9759D4D-1412-4D86-B70C-C99BD4E64696}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9759D4D-1412-4D86-B70C-C99BD4E64696}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9759D4D-1412-4D86-B70C-C99BD4E64696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA8A089-A6BA-4139-AE8E-44CF6A9FD682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA8A089-A6BA-4139-AE8E-44CF6A9FD682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA8A089-A6BA-4139-AE8E-44CF6A9FD682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA8A089-A6BA-4139-AE8E-44CF6A9FD682}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

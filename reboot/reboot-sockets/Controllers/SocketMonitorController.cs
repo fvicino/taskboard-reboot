@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using reboot_server.WebSocket;
+using reboot_sockets.WebSocket;
 using WebSocketManager;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -16,13 +16,13 @@ namespace reboot_server.Controllers
         {
             //## TODO get the container to inject the WebSocketHandler
             // and use that to get to the websocket connection list. 
-            // We can monitor, intercept and interactive with them.
+            // We can provide an api to monitor, intercept and interact.
         }
 
         // GET: /<controller>/
-        public IActionResult Index()
+        public JsonResult Index()
         {
-            return View();
+            return Json("");
         }
     }
 }

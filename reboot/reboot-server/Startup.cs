@@ -11,8 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 using reboot_server.Data;
 using reboot_server.Data.Abstraction;
 using reboot_server.Models;
-using reboot_server.WebSocket;
-using WebSocketManager;
 
 namespace reboot_server
 {
@@ -35,33 +33,15 @@ namespace reboot_server
             //## add our repositories here - there is only one right now!
             services.AddScoped(typeof(IRepository<TaskNote>), typeof(TaskRepository));
 
-            // ## add authentication
-            // require that all request are secure
-            services.Configure<MvcOptions>(options =>
-            {
-                options.Filters.Add(new RequireHttpsAttribute());
-            });
-
-
-            // ## AddWebsocketManager registers the SocketHandler class into 
-            //    the DI container. When WebSocketMiddleware is Mapped below
-            //    using MapWebSocketManager it will be injected with a SocketHandler singlton
-            //    that's how it will manage the persistent connections
-            services.AddWebSocketManager();
-
             //services.AddMvc().AddControllersAsServices(); // ## interesting but not too useful withou interception
             services.AddMvc();
-
-            // ## add websocket manager so it can load the SocketHandler into 
-            //    the DI container as a singleton, that how it will manage the persistent connections
-            services.AddWebSocketManager();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         // ## Add the IServiceProvider interface to the constructor so we can 
         //    fish around in the DI container
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             // ## Use the dev exception in all configs for now    
             app.UseDeveloperExceptionPage();
@@ -74,13 +54,6 @@ namespace reboot_server
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
-            // ## enable support for websockets
-            app.UseWebSockets();
-
-            // ## point requests on the path "/ws" to the SocketHandler instance 
-            //   that was added to the container in the ConfigureServices method above
-            app.MapWebSocketManager("/ws", serviceProvider.GetService<SocketHandler>());
 
         }
 

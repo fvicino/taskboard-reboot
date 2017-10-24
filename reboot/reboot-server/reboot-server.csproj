@@ -51,12 +51,11 @@
     <None Remove="reboot-common\obj\Debug\netcoreapp2.0\reboot-common.dll" />
     <None Remove="reboot-common\obj\Debug\netcoreapp2.0\reboot-common.pdb" />
     <None Remove=":Users:frank:Projects:taskboard-rebooted:reboot:reboot-server:wwwroot:js:Base:namespace.js" />
+    <None Remove="docker-compose.override.yml" />
+    <None Remove="docker-compose.yml" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="reboot-common\bin\Debug\netcoreapp2.0\reboot-common.deps.json" />
     <Content Remove="reboot-common\obj\project.assets.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WebSocketManager\WebSocketManager.csproj" />
   </ItemGroup>
 </Project>

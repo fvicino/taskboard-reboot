@@ -4,7 +4,7 @@
     <ProjectVersion>2.0</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerLaunchBrowser>true</DockerLaunchBrowser>
-    <DockerServiceUrl>http://localhost</DockerServiceUrl>
+    <DockerServiceUrl>http://localhost:4430</DockerServiceUrl>
     <DockerServiceName>reboot-server</DockerServiceName>
     <ProjectGuid>{D9759D4D-1412-4D86-B70C-C99BD4E64696}</ProjectGuid>
   </PropertyGroup>
@@ -14,5 +14,14 @@
       <DependentUpon>docker-compose.yml</DependentUpon>
     </None>
     <None Include="docker-compose.yml" />
+    <None Include="proxy-conf\proxy.conf" />
+    <None Include="proxy-cert\dev.cer" />
+    <None Include="proxy-cert\dev.key" />
+    <None Include="proxy-cert\dev.pfx" />
+    <None Include="proxy-cert\makePfx" />
+    <None Include="proxy-cert\makeCert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="proxy-cert\" />
   </ItemGroup>
 </Project>

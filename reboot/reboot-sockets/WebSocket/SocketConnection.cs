@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using WebSocketManager;
 
-namespace reboot_server.WebSocket
+namespace reboot_sockets.WebSocket
 {
 
     public class SocketConnection : WebSocketConnection

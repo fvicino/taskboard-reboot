@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using WebSocketManager;
 
-namespace reboot_server.WebSocket
+namespace reboot_sockets.WebSocket
 {
     public class SocketHandler : WebSocketHandler
     {
@@ -11,6 +11,9 @@ namespace reboot_server.WebSocket
 
         public override async Task<WebSocketConnection> OnConnected(HttpContext context)
         {
+            
+            //TODO get the the name from the clainm on the token - not the request string
+
             var name = context.Request.Query["Name"];
             if (!string.IsNullOrEmpty(name))
             {
@@ -18,6 +21,7 @@ namespace reboot_server.WebSocket
 
                 if (connection == null)
                 {
+                    // ## the http request gets upgraded to websocket
                     var webSocket = await context.WebSockets.AcceptWebSocketAsync();
 
                     connection = new SocketConnection(this)

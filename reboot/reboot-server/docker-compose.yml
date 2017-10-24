@@ -1,8 +1,0 @@
-version: '3'
-
-services:
-  reboot-server:
-    image: reboot-server
-    build:
-      context: ./.
-      dockerfile: Dockerfile
