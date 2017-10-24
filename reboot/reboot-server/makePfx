@@ -1,0 +1,1 @@
+openssl pkcs12 -export -in dev.cer -inkey dev.key -out dev.pfx

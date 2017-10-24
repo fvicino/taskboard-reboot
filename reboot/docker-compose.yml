@@ -3,6 +3,8 @@ version: '3'
 services:
   reboot-server:
     image: reboot-server
+    ports:
+    - 4430:4430
     build:
       context: ./reboot-server
       dockerfile: Dockerfile

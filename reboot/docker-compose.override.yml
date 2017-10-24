@@ -4,5 +4,3 @@ services:
   reboot-server:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
